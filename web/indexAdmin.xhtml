@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:p="http://primefaces.org/ui">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Bootstrap Admin Template : Binary Admin</title>
+	<!-- BOOTSTRAP STYLES-->
+    <link href="#{request.contextPath}/assets/css/bootstrap.css" rel="stylesheet" />  
+     <!-- FONTAWESOME STYLES--> 
+    <link href="#{request.contextPath}/assets/css/font-awesome.css" rel="stylesheet" />
+        <!-- CUSTOM STYLES-->
+    <link href="#{request.contextPath}/assets/css/custom.css" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+    <div class="container">
+        <div class="row text-center ">
+            <div class="col-md-12">
+                <br /><br />
+                <h2> Application de gestion des véhicules</h2>
+               
+                <h5>( Entrer votre login et password )</h5>
+                 <br />
+            </div>
+        </div>
+         <div class="row ">
+                   
+                  <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                        <strong>   chi haja hna </strong>  
+                            </div>
+                            <div class="panel-body">
+                                <h:form role="form">
+                                    <p:growl id="growl" showDetail="true" sticky="true" />  
+                                       <br />
+                                     <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
+                                            <p:inputText  class="form-control"  placeholder="Login "  value="#{utilisateurControler.login}" />
+                                            <a href="indexAdmin.xhtml"></a>
+                                            
+                                            
+                                        </div>
+                                                                               <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
+                                            
+                                            <p:password   placeholder="Password" class="form-control" value="#{utilisateurControler.passWord}"  />
+                                        </div>   
+                                    <div class="form-group">
+                                              <label class="checkbox-inline">
+                                                 <input type="checkbox" /> Remember me
+                                            </label>  
+                                              
+                                           </div>
+                                       <h:form>
+                                           <p:commandButton  actionListener="#{utilisateurControler.connexion()}" update="growl" value="Se connecter" class="btn btn-primary " ajax="false" icon="ui-icon-check"></p:commandButton>
+          
+                                           
+                                       </h:form>
+                                       
+                                    <hr/>
+                                    Not register ? <a href="registeration.html" >click here </a> 
+                                    </h:form>
+                            </div>
+                           
+                        </div>
+                    </div>
+                
+                
+        </div> 
+    </div>
+
+    <script src="#{request.contextPath}/assets/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="#{request.contextPath}/assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="#{request.contextPath}/assets/js/jquery.metisMenu.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="#{request.contextPath}/assets/js/custom.js"></script>
+   
+</body>
+</html>

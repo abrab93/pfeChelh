@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Facelet Title</title>
+
+    </h:head>
+    <h:body>
+        <ui:composition template="/Vues/layout.xhtml">
+
+            <ui:define name="content">
+                Redefinition du contenu du template  
+                <div id="page-wrapper" >
+                    <div id="page-inner">
+                        <div class="row">
+                            <div class="col-md-12">       
+                            
+                                    <p:tabView orientation="left">
+                                        
+                                        <p:tab title="Assurance">
+                                            <h:panelGrid columns="2" cellpadding="10">
+                                                <f:view>
+
+
+                                                    <h:form id="x">
+                                                        <p:growl id="growl12" showDetail="true" sticky="true" />
+                                                        <h1><h:outputText value="Assurance"/></h1>
+                                                        <p:panelGrid columns="2">
+                                                            <p:outputLabel value="Entrepriseassurance:" for="entrepriseassurance" />
+                                                            <p:selectOneMenu id="entrepriseassurance" value="#{assuranceControler.assurance.entrepriseassurance.idEntrepriseAssurance}" required="true" requiredMessage="The Entrepriseassurance field is required.">
+                                                                <f:selectItems value="#{entrepriseassuranceControler.entrepriseassurances}" var="ag" itemLabel="#{ag.nom}" itemValue="#{ag.idEntrepriseAssurance}"/>
+                                                            </p:selectOneMenu>
+                                                            <p:outputLabel value="Vehicule:" for="vehicule" />
+                                                            <p:outputLabel value="#{vehiculeControler.vehicule.immatriculation}" id="vehicule" />
+                                                            <p:outputLabel value="NumeroOrdre:" for="numeroOrdre" />
+                                                            <p:inputText id="numeroOrdre" value="#{assuranceControler.assurance.numeroOrdre}" title="NumeroOrdre" required="true" requiredMessage="The NumeroOrdre field is required."/>
+                                                            <p:outputLabel value="DateDebut:" for="dateDebut" />
+                                                            <p:calendar id="dateDebut" value="#{assuranceControler.assurance.dateDebut}" title="DateDebut" required="true" requiredMessage="The DateDebut field is required."/>
+                                                            <p:outputLabel value="DateFin:" for="dateFin" />
+                                                            <p:calendar id="dateFin" value="#{assuranceControler.assurance.dateFin}" title="DateFin" required="true" requiredMessage="The DateFin field is required."/>
+                                                            <p:outputLabel value="DateAssurance:" for="dateAssurance" />
+                                                            <p:calendar id="dateAssurance" value="#{assuranceControler.assurance.dateAssurance}" title="DateAssurance" required="true" requiredMessage="The DateAssurance field is required."/>
+                                                        </p:panelGrid>
+                                                        <p:commandButton action="#{assuranceControler.save(vehiculeControler.vehicule)}" value="ajouter" update="x,growl12"/>
+                                                    </h:form>
+                                                </f:view>
+
+
+                                            </h:panelGrid>
+                                        </p:tab>
+                                        <p:tab title="Vignette">
+                                            <h:panelGrid columns="2" cellpadding="10">
+
+                                                <f:view>
+
+
+                                                    <h:form id="a">
+                                                        <p:growl id="growl1" showDetail="true" sticky="true" />
+                                                        <h1><h:outputText value="Vignette"/></h1>
+                                                        <p:panelGrid columns="2">
+                                                            
+                                                            <p:outputLabel value="Vehicule:" for="vehicule" />
+                                                            <p:outputLabel value="#{vehiculeControler.vehicule.immatriculation}" id="vehicule" />
+                                                            <p:outputLabel value="DateDebut:" for="dateDebut" />
+                                                            <p:calendar id="dateDebut" value="#{vignetteControler.vignette.dateDebut}" title="DateDebut" required="true" requiredMessage="The DateDebut field is required."/>
+
+                                                            <p:outputLabel value="DateFin:" for="dateFin" />
+                                                            <p:calendar id="dateFin" value="#{vignetteControler.vignette.dateFin}" title="DateFin" required="true" requiredMessage="The DateFin field is required."/>
+
+                                                            <p:outputLabel value="Genre:" for="genre" />
+                                                            <p:inputText id="genre" value="#{vignetteControler.vignette.genre}" title="Genre" required="true" requiredMessage="The Genre field is required."/>
+                                                        </p:panelGrid>
+                                                        <p:commandButton action="#{vignetteControler.save(vehiculeControler.vehicule)}" value="ajouter" update="a,growl1" />
+                                                    </h:form>
+                                                </f:view>
+
+                                            </h:panelGrid>
+                                        </p:tab>
+                                        <p:tab title="VisiteTechnique">
+                                            <h:panelGrid columns="2" cellpadding="10">
+                                                <f:view>
+
+
+                                                    <h:form id="c">
+                                                        <p:growl id="grow3" showDetail="true" sticky="true" />
+                                                        <h1><h:outputText value="VisiteTechnique"/></h1>
+                                                        <p:panelGrid columns="2">
+                                                            
+                                                            <p:outputLabel value="Centrevisitetechnique:" for="centrevisitetechnique" />
+                                                            <p:selectOneMenu id="centrevisitetechnique" value="#{visitetechniqueControler.visitetechnique.centrevisitetechnique.idCentreVisiteTechnique}" required="true" requiredMessage="The Centrevisitetechnique field is required.">
+                                                                
+                                                                <f:selectItems value="#{centrevisitetechniqueControler.centrevisitetechniques}" var="centre" itemLabel="#{centre.nomCentre}" itemValue="#{centre.idCentreVisiteTechnique}"/>
+                                                            </p:selectOneMenu>
+                                                           
+                                                            <p:outputLabel value="Vehicule:" for="vehicule" />
+                                                            <p:outputLabel value="#{vehiculeControler.vehicule.immatriculation}" id="vehicule" />
+                                                            <p:outputLabel value="DateControle:" for="dateControle" />
+                                                            <p:calendar id="dateControle" value="#{visitetechniqueControler.visitetechnique.dateControle}" title="DateControle" required="true" requiredMessage="The DateControle field is required."/>
+                                                             
+                                                            <p:outputLabel value="Kilometrage:" for="kilometrage" />
+                                                            <p:inputText id="kilometrage" value="#{visitetechniqueControler.visitetechnique.kilometrage}" title="Kilometrage" required="true" requiredMessage="The Kilometrage field is required."/>
+                                                            <p:outputLabel value="Ripage:" for="ripage" />
+                                                            <p:inputText id="ripage" value="#{visitetechniqueControler.visitetechnique.ripage}" title="Ripage" required="true" requiredMessage="The Ripage field is required."/>
+                                                            <p:outputLabel value="Opacite:" for="opacite" />
+                                                            <p:inputText id="opacite" value="#{visitetechniqueControler.visitetechnique.opacite}" title="Opacite" required="true" requiredMessage="The Opacite field is required."/>
+                                                            <p:outputLabel value="DateProchaineVisite:" for="dateProchaineVisite" />
+                                                            <p:calendar id="dateProchaineVisite" value="#{visitetechniqueControler.visitetechnique.dateProchaineVisite}" title="DateProchaineVisite" required="true" requiredMessage="The DateProchaineVisite field is required."/>
+                                                               
+                                                        </p:panelGrid>
+                                                        <p:commandButton action="#{visitetechniqueControler.save(vehiculeControler.vehicule)}" value="ajouter" update="c,grow3" />
+                                                    </h:form>
+                                                </f:view>
+
+                                            </h:panelGrid>
+                                        </p:tab>
+                                        <p:tab title="Vidange">
+                                            <h:panelGrid columns="2" cellpadding="10">
+                                                <f:view>
+
+
+                                                    <h:form id="f">
+                                                        <p:growl id="growl" showDetail="true" sticky="true" />
+                                                        <h1><h:outputText value="Vidange"/></h1>
+                                                        <p:panelGrid columns="2">
+                                                            
+                                                            <p:outputLabel value="Vehicule:" for="vehicule" />
+                                                            <p:outputLabel value="#{vehiculeControler.vehicule.immatriculation}" id="vehicule" />
+                                                            <p:outputLabel value="DateVidange:" for="dateVidange" />
+                                                            <p:calendar id="dateVidange" value="#{vidangeControler.vidange.dateVidange}" title="DateVidange" required="true" requiredMessage="The DateVidange field is required."/>
+                                                                
+                                                            <p:outputLabel value="NombreLitres:" for="nombreLitres" />
+                                                            <p:inputText id="nombreLitres" value="#{vidangeControler.vidange.nombreLitres}" title="NombreLitres" required="true" requiredMessage="The NombreLitres field is required."/>
+                                                            <p:outputLabel value="Kilometrage:" for="kilometrage" />
+                                                            <p:inputText id="kilometrage" value="#{vidangeControler.vidange.kilometrage}" title="Kilometrage" required="true" requiredMessage="The Kilometrage field is required."/>
+                                                            <p:outputLabel value="TypeVehicule:" for="typeVehicule" />
+                                                            <p:inputText id="typeVehicule" value="#{vidangeControler.vidange.typeVehicule}" title="TypeVehicule" required="true" requiredMessage="The TypeVehicule field is required."/>
+                                                        </p:panelGrid>
+                                                        <p:commandButton actionListener="#{vidangeControler.save(vehiculeControler.vehicule)}" value="ajouter" update="f,growl"/>
+                                                    </h:form>
+                                                </f:view>
+
+                                            </h:panelGrid>
+                                        </p:tab>
+                                        
+                                    </p:tabView>
+                                
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </ui:define>
+
+
+        </ui:composition>
+
+    </h:body>
+</html>
+

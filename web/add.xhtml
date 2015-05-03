@@ -1,0 +1,116 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      
+    <h:head>
+        <title>Facelet Title</title>
+        <link type="text/css" href="style.css" rel="stylesheet" /> <!-- the layout css file -->
+	<link type="text/css" href="css/jquery.cleditor.css" rel="stylesheet" />
+	<link href="#{request.contextPath}/assets/css/bootstrap.css" rel="stylesheet" />
+            <link href="#{request.contextPath}/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="#{request.contextPath}/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="#{request.contextPath}/assets/css/custom.css" rel="stylesheet" />
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />   
+
+	<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>	<!-- jquery library -->
+	<script type='text/javascript' src='js/jquery-ui-1.8.5.custom.min.js'></script> <!-- jquery UI -->
+	<script type='text/javascript' src='js/cufon-yui.js'></script> <!-- Cufon font replacement -->
+	<script type='text/javascript' src='js/ColaborateLight_400.font.js'></script> <!-- the Colaborate Light font -->
+	<script type='text/javascript' src='js/easyTooltip.js'></script> <!-- element tooltips -->
+	<script type='text/javascript' src='js/jquery.tablesorter.min.js'></script> <!-- tablesorter -->
+        	<script type='text/javascript' src='js/visualize.jQuery.js'></script> <!-- visualize plugin for graphs / statistics -->
+	<script type='text/javascript' src='js/iphone-style-checkboxes.js'></script> <!-- iphone like checkboxes -->
+	<script type='text/javascript' src='js/jquery.cleditor.min.js'></script> <!-- wysiwyg editor -->
+
+	<script type='text/javascript' src='js/custom.js'></script> <!-- the "make them work" script -->
+    </h:head>   
+    <h:body> 
+        <ui:composition template="/Vues/layout.xhtml">
+   
+            <ui:define name="content">
+                <!-- Redefinition du contenu du template  -->
+                             <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                     <h2>AHLAN AHLAN</h2>   
+                     
+                    </div>
+                </div>              
+                 <!-- /. ROW  -->
+                  <hr />
+                <div class="row">
+                
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                <span class="icon-box bg-color-green set-icon">
+                    <i class="fa fa-bars"></i>
+                </span>
+                <div class="text-box" >
+                    <p class="main-text">30 Tasks</p>
+                    <p class="text-muted">Transactions</p>
+                </div>
+             </div> 
+		     </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+                        <a href="#">
+                            <div class="panel panel-back noti-box">
+                            
+                <span class="icon-box bg-color-red ">
+                    <i class="fa fa-warning"></i>
+                </span>
+                <div class="text-box" >
+                    <p class="main-text"><p:outputLabel style="color: red" value="#{vidangeControler.size} New"/> </p>
+                    
+                    <p class="text-muted">Notifications</p>
+                </div>
+                   </div>
+		    </a> 
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+			<div class="panel panel-back noti-box">
+                            <div class="row">
+                                <p:graphicImage class="icon-box" library="images" name="block.png" />  
+                            <div class="col-lg-offset-5">
+                 <div class="text-box" >
+                    <p class="main-text">3 Orders</p>
+                    <p class="text-muted">Users</p>
+                </div>
+                 
+                </div>
+                </div>
+             </div>
+		     </div>
+			</div>
+                 <!-- /. ROW  -->
+                <hr />                
+              
+                 <!-- /. ROW  -->
+               
+                 <!-- /. ROW  -->
+              
+                 <!-- /. ROW  -->
+              
+                 <!-- /. ROW  -->           
+    </div>
+               
+            </ui:define>
+
+
+        </ui:composition>
+             <script src="#{request.contextPath}/assets/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="#{request.contextPath}/assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="#{request.contextPath}/assets/js/jquery.metisMenu.js"></script>
+     <!-- MORRIS CHART SCRIPTS -->
+     <script src="#{request.contextPath}/assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="#{request.contextPath}/assets/js/morris/morris.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="#{request.contextPath}/assets/js/custom.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </h:body>
+</html>
